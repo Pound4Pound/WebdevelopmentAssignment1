@@ -12,5 +12,12 @@ input.addEventListener ("click", function(event){
 } );
 
 
+input = document.getElementById ('reset');
+console.log (input);
 
+input.addEventListener ("click", function(event){
+    console.log (event);
+    alert("Are you sure you want to reset?");
+
+} );
 
