@@ -13,6 +13,8 @@
 
     <link rel = "stylesheet" href = "stylesheet.css"> 
     
+    
+
 </head>
 
 
@@ -23,7 +25,7 @@
 
     <div class = "align-right">
 
-            <form action="" method="POST">
+            <form action="C:\Users\211367\Desktop\WebdevelopmentAssignment1\bouncer.php" method="POST">
                 Personal Details<br><br>
                     <label for="firstName"> First Name:</label>
                     <input type="text" name="fullName" id="fullName" required> <br>
@@ -34,6 +36,9 @@
                     <label for="Password"> Password: </label> 
                     <input id="Password" type="password" name="password" required> <br>
 
+                    <label for="Address"> Address:</label>
+                    <textarea type="text" name="address" id="address"> </textarea><br>
+
                     <label for="City"> City:</label>
                     <input type="text" name="city" id="city"> <br>
 
@@ -43,8 +48,8 @@
                     <label for="Postal Code"> Postal Code:</label>
                     <input type="text" name="postCode" id="postCode"> <br>
 
-                    <br> <br> <input type="submit" Value="Click to submit" id = "submit">
-                    <input type="reset" Value="reset" id = "reset">
+                    <br> <br> <input type="submit" Value="Click to submit" id = "submit" formaction="C:\Users\211367\Desktop\WebdevelopmentAssignment1\bouncer.php">
+                    <input type="reset" Value="reset form" id = "reset">
 
 
             </form>
@@ -54,16 +59,16 @@
     </div>
 
 
-
+<footer id="footer">
+            All rights reserved &copy; SAIT <img src = "images/sait logo.png">
+</footer>
 
 
 </body>
 
 
 
-<footer id="footer">
-    All rights reserved &copy; SAIT <img src = "images/sait logo.png">
-</footer>
+
 
 <script src = "script.js">
 
