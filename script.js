@@ -3,23 +3,24 @@
 var input = document.getElementById ('submit');
 console.log (input);
 
-window.onload = function(){
-input.addEventListener ("click", function(){
-  console.log (input);
-    alert("Are you sure you want to submit?");
-
-} );
 
 
-input = document.getElementById ('resetForm');
-console.log (input);
+// input.addEventListener ("click", function(){
+//   console.log (input);
+//     alert("Are you sure you want to submit?");
 
-input.addEventListener ("click", function(event){
-    console.log (event);
-    alert("Are you sure you want to reset?");
+// } );
 
-} );
-};
+
+// input = document.getElementById ('resetForm');
+// console.log (input);
+
+// input.addEventListener ("click", function(event){
+//     console.log (event);
+//     alert("Are you sure you want to reset?");
+
+// } 
+// );
 
  //code to show instructions regarding input when field is focused
 
@@ -30,15 +31,17 @@ input.addEventListener ("click", function(event){
  console.log(fieldInstruction);
  
  
- fieldFocus.addEventListener('focus', showInstruction);
+//fieldInstruction.style.display = "block"
 
-function showInstruction(){
-  fieldInstruction.style.display = "block"
-};
+// fieldFocus.addEventListener('focus', showInstruction);
 
-if (fieldFocus != 'focus'){
-fieldFocus.removeEventListener('focus', showInstruction);
-};
+// function showInstruction(){
+
+// };
+
+// if (fieldFocus != 'focus'){
+// fieldFocus.removeEventListener('focus', showInstruction);
+// };
 
 var images = ['img/harley1.jpg', 
                   'img/Joker2.jpg',
@@ -61,18 +64,25 @@ var webLinks = ['https://www.japan.travel/en/',
 
 ]
 
+  tableCreate();
 
-
+  
 
     function tableCreate() {
+      var tbl;
+      var contactBody; 
+      var tblBody;
+
 
         //body reference 
-        var contactBody = document.getElementById('contact');
+        contactBody = document.getElementById('contact');
         console.log(contactBody);
 
         // create elements <table> and a <tbody>
-        var tbl = document.createElement('table');
-        var tblBody = document.createElement('tbody');
+        tbl = document.createElement('table');
+        console.log(tbl);
+
+        tblBody = document.createElement('tbody');
       
         // header creation
 
@@ -86,15 +96,22 @@ var webLinks = ['https://www.japan.travel/en/',
         th2.appendChild(descriptionHeader);
         tblBody.appendChild(th2);
         
+      var cell;
+      var image;
+      var row;
+      var cellText;
+
         for (var j = 0; j < images.length; j++) {
         // row creation
-          var row = document.createElement('tr');
+          row = document.createElement('tr');
 
         // create element <td> and text node 
         //Make image the contents of <td> element
-          var cell = document.createElement('td');
-          var image = document.createElement('img');
+          cell = document.createElement('td');
+          image = document.createElement('img');
           image.src = images[j];
+
+          
           cell.appendChild(image);
           row.appendChild(cell);
       
@@ -103,10 +120,10 @@ var webLinks = ['https://www.japan.travel/en/',
             // create element <td> and text node 
             //Make text node the contents of <td> element
             // put <td> at end of the table column
-            var cell = document.createElement('td');
+            cell = document.createElement('td');
             
             //var cellText = document.createTextNode('cell is row ' + j + ', column ' + i);
-            var cellText = document.createTextNode(imageDesc[j]);
+            cellText = document.createTextNode(imageDesc[j]);
 
             cell.appendChild(cellText);
             row.appendChild(cell);
@@ -118,15 +135,21 @@ var webLinks = ['https://www.japan.travel/en/',
       
         // append the <tbody> inside the <table>
         tbl.appendChild(tblBody);
+
+        // error check for null value of the document element () as an error was returning a null value
+        if (contactBody !== null) {
+
         // put <table> in the <body>
-        contactBody.appendChild(tbl);
+          contactBody.appendChild(tbl);
+        } ;
+
+
         // tbl border attribute to 
         tbl.setAttribute('border', '3');
-      }
-
-      tableCreate()
+      };
+     
       //found an example of table creation on stack overflow
-      //was able to modify javascript example on: M.A.K. Ripon
+      //was able to modify javascript example by M.A.K. Ripon:
       //https://stackoverflow.com/questions/14643617/create-table-using-javascript
       //unclear on how to fix  line 108 error: body.appendChild(tbl);
       //without line 108, table is not created
