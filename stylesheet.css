@@ -9,6 +9,7 @@
     border: 3px solid #7748b7;
     max-height: 70%;
     background-color: white;
+    
 }
 
 
@@ -16,12 +17,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     background-color: lightblue;
-    border: 2px double #6d1818;
+    border: 20px double #6d1818;
     padding: 10px;
     margin: 3px 4px;
-
+    background-image: url("img/photo-1510412094233-53186308173b.jpg");
+    z-index: -1;
 
 }
+
+#footer{
+    position: absolute;
+    left:30px;
+    right: auto;
+}
+
 
 #warning{
     color: red;
@@ -29,21 +38,27 @@ body {
 }
 
 li:hover{
-    font-size: 30px;
+    font-size: 22px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: cadetblue;
+    float: left;
+    margin-left: 30px;
+    margin-right: auto;
+    
 }
 
 p{
     font-size: 20px;
     font-family: 'Arial Narrow Bold', sans-serif;
     padding: 1em;
+    
 }
 
 .box{
     position: relative;
-    border: 1px dashed #af0000;
-    border-top: dotted #9943;
-    border-left: dotted #9943;
+    border: 2px dashed #af0000;
+    border-top: 6px dotted #9943;
+    border-left: 4px dotted #9943;
     margin-left: auto;
     margin-right: 0;
     margin-top: 1em;
@@ -79,8 +94,53 @@ p{
 
 input{
     background-color: rgb(255, 255, 103);
+    margin-left: 50px;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 textarea{
     background-color: rgb(255, 255, 103);
+    margin-top: 8px;
+    margin-bottom: auto ;
+    margin-left: 20px;
+    margin: 8px auto 20px 30px;
+}
+
+
+#credentials{
+    float: left;
+    position: relative;
+    margin-left: 200px;
+    margin-right: auto;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+#addressDetails{
+    float:right;
+    position:relative;
+    margin-left: auto;
+    margin-right: 200px;
+    border: 1px solid red;
+    padding 10px;
+}
+
+#formBtns{
+    position:relative;
+    margin: 200px
+
+}
+
+#userStreetAddress{
+    margin: 15px;
+}
+
+
+label{
+    margin: 5px;
+}
+
+.labelColor{
+    background-color: lightblue
 }

@@ -1,19 +1,17 @@
-
-
 // Javascript added to the Travel website.
 
 var input = document.getElementById ('submit');
 console.log (input);
 
-window.onload=function(){
-input.addEventListener ("click", function(event){
-    console.log (event);
+window.onload = function(){
+input.addEventListener ("click", function(){
+  console.log (input);
     alert("Are you sure you want to submit?");
 
 } );
 
 
-input = document.getElementById ('reset');
+input = document.getElementById ('resetForm');
 console.log (input);
 
 input.addEventListener ("click", function(event){
@@ -21,8 +19,26 @@ input.addEventListener ("click", function(event){
     alert("Are you sure you want to reset?");
 
 } );
-}
+};
 
+ //code to show instructions regarding input when field is focused
+
+ var fieldFocus = document.getElementById('name1');
+ var fieldInstruction = document.getElementById('firstNameInstr');
+ 
+ console.log(fieldFocus);
+ console.log(fieldInstruction);
+ 
+ 
+ fieldFocus.addEventListener('focus', showInstruction);
+
+function showInstruction(){
+  fieldInstruction.style.display = "block"
+};
+
+if (fieldFocus != 'focus'){
+fieldFocus.removeEventListener('focus', showInstruction);
+};
 
 var images = ['img/harley1.jpg', 
                   'img/Joker2.jpg',
@@ -36,23 +52,23 @@ var imageDesc = ['pretty girl',
                    'old man'
                 ];
 
-//   var contactBody = document.getElementById('contact');
+// URLs used to link agents to profiles
+// each agent will be a specialist to a region i.e. Southeast Asia, Japan, China, Thailand
+var webLinks = ['https://www.japan.travel/en/',  
+                'https://www.tourismthailand.org/home',
+                'http://www.tourism.gov.ph/',
+                'http://www.travelchina.gov.cn/en/index/index.shtml'
 
-//       console.log(contactBody);
+]
 
 
 
 
     function tableCreate() {
 
-
-
         //body reference 
         var contactBody = document.getElementById('contact');
         console.log(contactBody);
-
-        // //create header
-        
 
         // create elements <table> and a <tbody>
         var tbl = document.createElement('table');
@@ -75,7 +91,7 @@ var imageDesc = ['pretty girl',
           var row = document.createElement('tr');
 
         // create element <td> and text node 
-        //Make text node the contents of <td> element
+        //Make image the contents of <td> element
           var cell = document.createElement('td');
           var image = document.createElement('img');
           image.src = images[j];
@@ -109,6 +125,100 @@ var imageDesc = ['pretty girl',
       }
 
       tableCreate()
+      //found an example of table creation on stack overflow
+      //was able to modify javascript example on: M.A.K. Ripon
+      //https://stackoverflow.com/questions/14643617/create-table-using-javascript
+      //unclear on how to fix  line 108 error: body.appendChild(tbl);
+      //without line 108, table is not created
+
+// });
+
+// if(fieldFocus.addEventListener('focus',function(event)
+// {
+//   //document.getElementById('name1').style.display = block;
+//   fieldInstruction.style.display = "block";
+// }
+
+
+
+// fieldFocus.addEventListener('focus')
+
+
+
+// function myFunction(fieldInstruction) {
+//   fieldInstruction.style.display = "block"
+// }
+
+//fieldInstruction.style.setAttribute('')
+
+
+//imgKitten.setAttribute('src', 'http://placekitten.com/g/600/500'); 
+
+// if (document.myform.firstname.focus()){
+
+//   document.myform.firstNameInstr.style.display = "block";
+// };
+
+
+// var f = function(){
+
+//   var focusField = function(event){
+//     var formInstruction = document.getElementById("firstNameInstr");
+//     formInstruction.style.display = "block";
+//   };
+  
+    
+//   }
+
+
+// focusField.addEventListener('focus', focusField, false);
+// focusField.addEventListener('blur', focusField, false);
+
+
+
+
+      //add a listener to present instructions to fields when focused on
+
+      // var f = function(){
+
+      //   var focusEventHandler = function(event){
+
+      //       var divElement = document.getElementById('credentials')[0];
+      //       divElement.sty
+      //   }
+
+      // }
+
+
+
+
+
+
+
+
+
+
+      // var formInstruction = document.getElementById("name1");
+
+      // formInstruction.addEventListener("onfocus", function(event){
+      //   //focus will display instructions for selected field.
+      //   if( formInstruction)
+      //   {
+      //     firstNameInstr.style.display = "block";
+      //   }
+
+      // })
+
+      // document.myform.name1.onfocus = function(){
+      //   if("focus") {
+      //     firstNameInstr.style.display = "block";
+      //   }  
+
+      // }
+
+   
+
+  
 
       
 

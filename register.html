@@ -21,36 +21,65 @@
 <body id = 'register'>
     <h1 id = 'warning'> This page is under construction.</h1>
 
-    
+
 
     <div class = "align-right">
 
-            <form action="C:\Users\211367\Desktop\WebdevelopmentAssignment1\bouncer.php" method="POST">
-                Personal Details<br><br>
-                    <label for="firstName"> First Name:</label>
-                    <input type="text" name="fullName" id="fullName" required> <br>
+            <form action="/bouncer.php" method="POST" name = myform>
+                <h1>Personal Details</h1><br><br>
 
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" name="fullName" id="fullName" required> <br>
+            <!-- Left- Hand side of the form -->
+                <div id = "credentials">
+                    <label for="name1" class= "labelColor"> First Name:</label>
+                    <input type="text" name="firstName" id="name1" required> <br>
 
-                    <label for="Password"> Password: </label> 
-                    <input id="Password" type="password" name="password" required> <br>
+                <!-- hidden instructions for the field that will be displayed once focused by user-->
+                        <p id = "firstNameInstr" style="display:none" > Enter your first name. </p> 
 
-                    <label for="Address"> Address:</label>
-                    <textarea type="text" name="address" id="address"> </textarea><br>
 
-                    <label for="City"> City:</label>
-                    <input type="text" name="city" id="city"> <br>
+                    <label for="name2" class= "labelColor">Last Name:</label>
+                    <input type="text" name="lastName" id="name2" required> <br>
 
-                    <label for="Province"> Province:</label>
-                    <input type="text" name="Province" id="Province"> <br>
+                        <p id = "lastNameInstr" style="display:none"> Enter your last name. </p>
 
-                    <label for="Postal Code"> Postal Code:</label>
-                    <input type="text" name="postCode" id="postCode"> <br>
+                    <label for="userPassword" class= "labelColor"> Password: </label> 
+                    <input type="password" name="password" id="userPassword"  required> <br>
 
-                    <br> <br> <input type="submit" Value="Click to submit" id = "submit" formaction="C:\Users\211367\Desktop\WebdevelopmentAssignment1\bouncer.php">
-                    <input type="reset" Value="reset form" id = "reset">
+                </div>
+                        <p id = "passwordInstr" style="display:none"> Enter password. </p>
 
+
+                <!-- Right Hand side of the form -->
+
+
+                  <div id = "addressDetails">      
+                    <label for="userStreetAddress" class= "labelColor"> Address:</label>
+                    <textarea type="text" name="address" id="userStreetAddress" > </textarea><br>
+
+                        <!-- hidden instructions for the field that will be displayed once focused by user-->
+                        <p id = "AddressInstr" style="display:none"> Enter your Address. </p>
+
+                    <label for="userCity" class= "labelColor"> City:</label>
+                    <input type="text" name="city" id="userCity"> <br>
+
+                        <p id = "CityInstr" style="display:none"> Enter the city you live in. </p>
+
+                    <label for="userProvince" class= "labelColor"> Province:</label>
+                    <input type="text" name="province" id="userProvince"> <br>
+
+                        <p id = "provinceInstr" style="display:none"> Enter the province you live in. </p>
+
+                    <label for="userPostCode" class= "labelColor"> Postal Code:</label>
+                    <input type="text" name="postCode" id="userPostCode"> <br>
+                </div>
+                        <p id = "postCodeInstr" style="display:none"> Enter your postal code. </p>
+               
+               <!-- control buttons for the form -->
+                <div id = formBtns>
+                    <br> <br> 
+                    <input type="submit" Value="Click to submit" id = "submit" formaction="/bouncer.php">
+                    <input type="reset" Value="reset form" id = "resetForm">
+                </div>
 
             </form>
 
@@ -60,18 +89,14 @@
 
 
 <footer id="footer">
-            All rights reserved &copy; SAIT <img src = "images/sait logo.png">
+        <br><br><br>
+            All rights reserved &copy; SAIT <img src = "img/sait logo.jpg">
 </footer>
 
-
+<script src = "script.js">
+    </script>
+    
 </body>
 
-
-
-
-
-<script src = "script.js">
-
-</script>
 
 </html>
