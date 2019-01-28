@@ -78,10 +78,10 @@ var webLinks = ['https://www.japan.travel/en/',
         th2.appendChild(descriptionHeader);
         tblBody.appendChild(th2);
         
-      var cell;
-      var image;
       var row;
+      var cell;
       var cellText;
+      var image;
       var webPageAnchor;
 
         for (var j = 0; j < images.length; j++) {
@@ -92,16 +92,16 @@ var webLinks = ['https://www.japan.travel/en/',
         //Make image the contents of <td> element
           cell = document.createElement('td');
           webPageAnchor = document.createElement('a');
+          console.log(webPageAnchor);
           webPageAnchor.href = webLinks[j];
+          webPageAnchor.target = '_blank';
+
+          console.log(webPageAnchor);
 
           image = document.createElement('img');
           image.src = images[j];
           image.style.maxWidth = '15em';
 
-          
-          
-          
-//          var infoWindow = window.open("")
           
           webPageAnchor.appendChild(image);
           cell.appendChild(webPageAnchor)
@@ -148,8 +148,18 @@ var webLinks = ['https://www.japan.travel/en/',
       //https://stackoverflow.com/questions/14643617/create-table-using-javascript
       
 
+//  Web Page timer:
 
+      // var navigate = window.open("https://google.ca");
+      // var timerId = setTimeout(close.window(), 8000);
 
+      // navigate.addEventListener("click"), timeWindow;{
+
+      //   function timeWindow(){
+      //     navigate.close();
+
+      //   }}
+  
 
 
 
