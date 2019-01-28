@@ -132,9 +132,8 @@ var webLinks = ['https://www.japan.travel/en/',
       //https://stackoverflow.com/questions/14643617/create-table-using-javascript
       
 
-//code to show instructions regarding input when field is focused
-
-
+//first name field
+//code to 'show instructions' when field becomes focused
 var fieldFocus = document.getElementById('name1');
 var fieldInstruction = document.getElementById('firstNameInstr');
       
@@ -142,16 +141,79 @@ console.log(fieldFocus);
 console.log(fieldInstruction);
 
 if (fieldFocus !== null){
-
 fieldFocus.addEventListener('focus', showInstruction);
-
-
-
-};
+}; 
 
 function showInstruction(){
   fieldInstruction.style.display = "block";
+  console.log(fieldFocus);
+  console.log(fieldInstruction);
 };
+
+//code to 'show instructions' when field becomes blurred
+
+fieldFocus.addEventListener('blur', hideInstruction);
+
+function hideInstruction(){
+  fieldInstruction.style = "display:none";
+  console.log(fieldInstruction);
+}
+                // //toggle focus for additonal field.  
+                // //last name field
+                // //code to 'show instructions' when field becomes focused
+                // var fieldFocus2 = document.getElementById('name2');
+                // var fieldInstruction2 = document.getElementById('lastNameInstr');
+                      
+                // console.log(fieldFocus2);
+                // console.log(fieldInstruction2);
+
+                // if (fieldFocus2 !== null){
+                // fieldFocus2.addEventListener('focus', showInstruction2);
+                // }; 
+
+                // function showInstruction2(){
+                //   fieldInstruction2.style.display = "block";
+                //   console.log(fieldFocus2);
+                //   console.log(fieldInstruction2);
+                // };
+
+                // //code to 'show instructions' when field becomes blurred
+
+                // fieldFocus2.addEventListener('blur', hideInstruction2);
+
+                // function hideInstruction2(){
+                //   fieldInstruction2.style = "display:none";
+                //   console.log(fieldInstruction2);
+                // }
+
+
+
+
+// if (fieldFocus !== null){
+//   while (fieldInstruction.style.display === "block"){
+//     fieldFocus.addEventListener('blur', hideInstruction);
+//     }
+//     console.log(fieldInstruction);
+// };
+
+console.log(fieldInstruction);
+
+// if (fieldFocus !== null){
+// fieldFocus.addEventListener('blur', hideInstruction);
+// };
+
+// function hideInstruction(){
+//   fieldInstruction.style.display = "display:none";
+// };
+
+
+// fieldFocus.addEventListener('blur', hideInstruction) = function(){
+  
+//   if (!fieldFocus.style.display )  //field not in focus
+
+// }
+
+
 
 // if (fieldFocus !== null){
 // fieldFocus.removeEventListener('focus', showInstruction);
