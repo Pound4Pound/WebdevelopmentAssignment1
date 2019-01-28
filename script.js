@@ -82,6 +82,7 @@ var webLinks = ['https://www.japan.travel/en/',
       var image;
       var row;
       var cellText;
+      var webPageAnchor;
 
         for (var j = 0; j < images.length; j++) {
         // row creation
@@ -90,11 +91,20 @@ var webLinks = ['https://www.japan.travel/en/',
         // create element <td> and text node 
         //Make image the contents of <td> element
           cell = document.createElement('td');
+          webPageAnchor = document.createElement('a');
+          webPageAnchor.href = webLinks[j];
+
           image = document.createElement('img');
           image.src = images[j];
           image.style.maxWidth = '15em';
 
-          cell.appendChild(image);
+          
+          
+          
+//          var infoWindow = window.open("")
+          
+          webPageAnchor.appendChild(image);
+          cell.appendChild(webPageAnchor)
           row.appendChild(cell);
       
           for (var i = 0; i < 1; i++) {
