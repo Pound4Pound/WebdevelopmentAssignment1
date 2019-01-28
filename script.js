@@ -28,10 +28,10 @@ var images = ['img/harley1.jpg',
                   'img/old_man_joker_by_djdyme-d9kevep.jpg'
                 ];
 
-var imageDesc = ['pretty girl',
-                   'handsome boy',
-                   'old woman',
-                   'old man'
+var imageDesc = ['Primary Japan Travel Agent',
+                 'Primary Thailand Travel Agent',
+                 'Primary Philippines Travel Agent',
+                 'Primary China Travel Agent'
                 ];
 
 // URLs used to link agents to profiles
@@ -40,8 +40,11 @@ var webLinks = ['https://www.japan.travel/en/',
                 'https://www.tourismthailand.org/home',
                 'http://www.tourism.gov.ph/',
                 'http://www.travelchina.gov.cn/en/index/index.shtml'
+];
 
-]
+
+
+
 
   tableCreate();
 
@@ -89,8 +92,8 @@ var webLinks = ['https://www.japan.travel/en/',
           cell = document.createElement('td');
           image = document.createElement('img');
           image.src = images[j];
+          image.style.maxWidth = '15em';
 
-          
           cell.appendChild(image);
           row.appendChild(cell);
       
@@ -104,8 +107,11 @@ var webLinks = ['https://www.japan.travel/en/',
             //var cellText = document.createTextNode('cell is row ' + j + ', column ' + i);
             cellText = document.createTextNode(imageDesc[j]);
 
+            cell.style.backgroundColor = 'lightblue';
+
             cell.appendChild(cellText);
             row.appendChild(cell);
+
           }
                  
           //row added to end of table body
@@ -132,59 +138,235 @@ var webLinks = ['https://www.japan.travel/en/',
       //https://stackoverflow.com/questions/14643617/create-table-using-javascript
       
 
-//first name field
-//code to 'show instructions' when field becomes focused
-var fieldFocus = document.getElementById('name1');
-var fieldInstruction = document.getElementById('firstNameInstr');
-      
-console.log(fieldFocus);
-console.log(fieldInstruction);
 
-if (fieldFocus !== null){
-fieldFocus.addEventListener('focus', showInstruction);
-}; 
 
-function showInstruction(){
-  fieldInstruction.style.display = "block";
-  console.log(fieldFocus);
-  console.log(fieldInstruction);
-};
 
-//code to 'show instructions' when field becomes blurred
 
-fieldFocus.addEventListener('blur', hideInstruction);
 
-function hideInstruction(){
-  fieldInstruction.style = "display:none";
-  console.log(fieldInstruction);
-}
-                // //toggle focus for additonal field.  
-                // //last name field
-                // //code to 'show instructions' when field becomes focused
-                // var fieldFocus2 = document.getElementById('name2');
-                // var fieldInstruction2 = document.getElementById('lastNameInstr');
-                      
-                // console.log(fieldFocus2);
-                // console.log(fieldInstruction2);
 
-                // if (fieldFocus2 !== null){
-                // fieldFocus2.addEventListener('focus', showInstruction2);
-                // }; 
 
-                // function showInstruction2(){
-                //   fieldInstruction2.style.display = "block";
-                //   console.log(fieldFocus2);
-                //   console.log(fieldInstruction2);
-                // };
 
-                // //code to 'show instructions' when field becomes blurred
+                            /*          Second attempt to reference to display and hide fields. In this section I tried to reference the 
+                                        fields by getElementsByClassName. I misread the instructions and was toggling
+                                        messages with an 'addEventListener' action.  I re-read the instructions and modified my CSS style
+                                        sheet to hide instructions and set information into a stack.
 
-                // fieldFocus2.addEventListener('blur', hideInstruction2);
 
-                // function hideInstruction2(){
-                //   fieldInstruction2.style = "display:none";
-                //   console.log(fieldInstruction2);
-                // }
+
+                            */
+
+                            //first name field
+                            //code to 'show instructions' when field becomes focused
+                            //var fieldFocus = document.getElementById('name1');
+                            //var fieldInstruction = document.getElementById('firstNameInstr');
+
+                            // var fieldFocus = document.getElementsByClassName('inputs')[0];
+                            // var fieldInstruction = document.getElementsByClassName('instruction')[0];
+
+                            // console.log(fieldFocus);
+                            // console.log(fieldInstruction);
+
+                            // if (fieldFocus !== null){
+                            // fieldFocus.addEventListener('focus', showInstruction);
+                            // }; 
+
+                            // if (fieldFocus !== null){
+                            // function showInstruction(){
+                            //   fieldInstruction.style.display = "block";
+                            //   console.log(fieldFocus);
+                            //   console.log(fieldInstruction);
+                            // };
+                            // }
+
+                            // //code to 'show instructions' when field becomes blurred
+
+                            // fieldFocus.addEventListener('blur', hideInstruction);
+
+                            // if (fieldFocus !== null){
+                            // function hideInstruction(){
+                            //   fieldInstruction.style = "display:none";
+                            //   console.log(fieldInstruction);
+                            // }
+                            // }
+
+
+
+/*          First attempt to reference to display and hide fields. I misread the instructions and was toggling
+            messages with an 'addEventListener' action.  I re-read the instructions and modified my CSS style
+            sheet to hide instructions and set information into a stack.
+
+*/
+
+
+                //toggle focus for additonal field.  
+                //last name field
+                //code to 'show instructions' when field becomes focused
+                var fieldFocus1 = document.getElementById('name1'),
+                fieldFocus2 = document.getElementById('name2'),
+                fieldFocus3 = document.getElementById('userPassword'),
+                fieldFocus4 = document.getElementById('userStreetAddress'),
+                fieldFocus5 = document.getElementById('userCity'),
+                fieldFocus6 = document.getElementById('userProvince'),
+                fieldFocus7 = document.getElementById('userPostCode');
+                
+                var fieldInstruction1 = document.getElementById('firstNameInstr'),
+                fieldInstruction2 = document.getElementById('lastNameInstr'),
+                fieldInstruction3 = document.getElementById('passwordInstr'),
+                fieldInstruction4 = document.getElementById('AddressInstr'),
+                fieldInstruction5 = document.getElementById('CityInstr'),
+                fieldInstruction6 = document.getElementById('provinceInstr'),
+                fieldInstruction7 = document.getElementById('postCodeInstr');
+
+//1)First name field
+                if (fieldFocus1 !== null){
+                  fieldFocus1.addEventListener('focus', showInstruction1);
+                  }; 
+                  function showInstruction1(){
+                    fieldInstruction1.style = "visibility:visible";
+                  };
+                  if (fieldFocus1 !== null){
+                  fieldFocus1.addEventListener('blur', hideInstruction1);
+                  function hideInstruction1(){
+                    fieldInstruction1.style = "visibilty:hidden";
+                  }};
+
+
+//2)Last name field                
+                if (fieldFocus2 !== null){
+                fieldFocus2.addEventListener('focus', showInstruction2);
+                }; 
+                function showInstruction2(){
+                  fieldInstruction2.style = "visibility:visible";
+                };
+                //code to 'show instructions' when field becomes blurred
+                if (fieldFocus1 !== null){
+                fieldFocus2.addEventListener('blur', hideInstruction2);
+                function hideInstruction2(){
+                  fieldInstruction2.style = "visibilty:hidden";
+                }};
+
+//3)password
+                if (fieldFocus3 !== null){
+                  fieldFocus3.addEventListener('focus', showInstruction3);
+                  }; 
+                  function showInstruction3(){
+                    fieldInstruction3.style = "visibility:visible";
+                  };
+                  //code to 'show instructions' when field becomes blurred
+                  if (fieldFocus1 !== null){
+                  fieldFocus3.addEventListener('blur', hideInstruction3);
+                  function hideInstruction3(){
+                    fieldInstruction3.style = "visibilty:hidden";
+                  }};
+
+
+//4)Address              
+                if (fieldFocus4 !== null){
+                fieldFocus4.addEventListener('focus', showInstruction4);
+                }; 
+                function showInstruction4(){
+                  fieldInstruction4.style = "visibility:visible";
+                };
+                //code to 'show instructions' when field becomes blurred
+                if (fieldFocus1 !== null){
+                fieldFocus4.addEventListener('blur', hideInstruction4);
+                function hideInstruction4(){
+                  fieldInstruction4.style = "visibilty:hidden";
+                }}; 
+//5)City              
+                if (fieldFocus5 !== null){
+                fieldFocus5.addEventListener('focus', showInstruction5);
+                }; 
+                function showInstruction5(){
+                  fieldInstruction5.style = "visibility:visible";
+                };
+                //code to 'show instructions' when field becomes blurred
+                if (fieldFocus1 !== null){
+                fieldFocus5.addEventListener('blur', hideInstruction5);
+                function hideInstruction5(){
+                  fieldInstruction5.style = "visibilty:hidden";
+                }};
+//6)Province
+                if (fieldFocus6 !== null){
+                  fieldFocus6.addEventListener('focus', showInstruction6);
+                  }; 
+                  function showInstruction6(){
+                    fieldInstruction6.style = "visibility:visible";
+                  };
+                  //code to 'show instructions' when field becomes blurred
+                  if (fieldFocus1 !== null){
+                  fieldFocus6.addEventListener('blur', hideInstruction6);
+                  function hideInstruction6(){
+                    fieldInstruction6.style = "visibilty:hidden";
+                  }};
+//7)Postal Code                
+                if (fieldFocus7 !== null){
+                fieldFocus7.addEventListener('focus', showInstruction7);
+                }; 
+                function showInstruction7(){
+                  fieldInstruction7.style = "visibility:visible";
+                };
+                //code to 'show instructions' when field becomes blurred
+                if (fieldFocus1 !== null){
+                fieldFocus7.addEventListener('blur', hideInstruction7);
+                function hideInstruction7(){
+                  fieldInstruction7.style = "visibilty:hidden";
+                }};
+                
+                
+//check input of Postal Code
+
+                var submitBtn = document.getElementById('submitBtn');
+                // var postalCode = document.myform.userPostCode.value; 
+                var postalCode = document.getElementById('userPostCode'); 
+                console.log(postalCode);
+                console.log(submitBtn);
+                
+
+                postalFilter(postalCode);  
+
+                function postalFilter (postalCode) {
+
+
+                  if (! postalCode) {
+                    return null;
+                  }
+              
+                  postalCode = postalCode.toString().trim();
+              
+                  var us = new RegExp("^\\d{5}(-{0,1}\\d{4})?$");
+                  var ca = new RegExp(/([ABCEGHJKLMNPRSTVXY]\d)([ABCEGHJKLMNPRSTVWXYZ]\d){2}/i);
+              
+                  if (us.test(postalCode.toString())) {
+                      return postalCode;
+                  }
+              
+                  if (ca.test(postalCode.toString().replace(/\W+/g, ''))) {
+                      return postalCode;
+                  }
+
+                  return null;
+              }
+
+                if(submitBtn !== null){
+                submitBtn.addEventListener("click", function(event){
+    console.log(postalCode);
+                  if (postalCode === null){
+                   
+                    event.preventDefault();
+                    console.log('invalid entry');
+                    }
+                  })};
+                                
+//verify postal code
+ 
+                  
+
+
+
+
+
+
 
 
 
@@ -196,7 +378,7 @@ function hideInstruction(){
 //     console.log(fieldInstruction);
 // };
 
-console.log(fieldInstruction);
+//console.log(fieldInstruction);
 
 // if (fieldFocus !== null){
 // fieldFocus.addEventListener('blur', hideInstruction);

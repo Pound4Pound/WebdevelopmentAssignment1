@@ -31,22 +31,23 @@
             <!-- Left- Hand side of the form -->
                 <div id = "credentials">
                     <label for="name1" class= "labelColor"> First Name:</label>
-                    <input type="text" name="firstName" id="name1" required> <br>
+                    <input class="inputs" type="text" name="firstName" id="name1" required > <br>
 
                 <!-- hidden instructions for the field that will be displayed once focused by user-->
-                        <p id = "firstNameInstr" style="display:none" > Enter your first name. </p> 
+                        <p id = "firstNameInstr" class = 'instructionLeft'  > Enter your first name. </p> 
 
 
                     <label for="name2" class= "labelColor">Last Name:</label>
-                    <input type="text" name="lastName" id="name2" required> <br>
+                    <input class="inputs" type="text" name="lastName" id="name2" required> <br>
 
-                        <p id = "lastNameInstr" style="display:none"> Enter your last name. </p>
+                        <p id = "lastNameInstr" class = 'instructionLeft' > Enter your last name. </p>
 
                     <label for="userPassword" class= "labelColor"> Password: </label> 
-                    <input type="password" name="password" id="userPassword"  required> <br>
+                    <input class="inputs" type="password" name="password" id="userPassword"  required> <br>
 
+                        <p id = "passwordInstr" class = 'instructionLeft' > Enter password. </p>
                 </div>
-                        <p id = "passwordInstr" style="display:none"> Enter password. </p>
+                        
 
 
                 <!-- Right Hand side of the form -->
@@ -54,30 +55,34 @@
 
                   <div id = "addressDetails">      
                     <label for="userStreetAddress" class= "labelColor"> Address:</label>
-                    <textarea type="text" name="address" id="userStreetAddress" > </textarea><br>
+                    <textarea class="inputs" type="text" name="address" id="userStreetAddress" class = textAreaLabelColor rows="4" cols="50"
+                     required="required"> </textarea><br>
+                <!-- text area 'required' attribute not working. -->
 
                         <!-- hidden instructions for the field that will be displayed once focused by user-->
-                        <p id = "AddressInstr" style="display:none"> Enter your Address. </p>
+                        <p id = "AddressInstr" class = 'instructionRight'> Enter your Address. </p>
 
                     <label for="userCity" class= "labelColor"> City:</label>
-                    <input type="text" name="city" id="userCity"> <br>
+                    <input class="inputs" type="text" name="city" id="userCity" required> <br>
 
-                        <p id = "CityInstr" style="display:none"> Enter the city you live in. </p>
+                        <p id = "CityInstr" class = 'instructionRight'> Enter the city you live in. </p>
 
                     <label for="userProvince" class= "labelColor"> Province:</label>
-                    <input type="text" name="province" id="userProvince"> <br>
+                    <input class="inputs" type="text" name="province" id="userProvince" required> <br>
 
-                        <p id = "provinceInstr" style="display:none"> Enter the province you live in. </p>
+                        <p id = "provinceInstr" class = 'instructionRight'> Enter the province you live in. </p>
 
-                    <label for="userPostCode" class= "labelColor"> Postal Code:</label>
-                    <input type="text" name="postCode" id="userPostCode"> <br>
+                    <label for="userPostCode" class= "labelColor"> Postal Code: </label>
+                    <input class="inputs" type="text" name="postCode" id="userPostCode" value = '0000' required> <br>
+
+                    <p id = "postCodeInstr" class = 'instructionRight'> Enter your postal code. (i.e A1A 1A1)</p>
                 </div>
-                        <p id = "postCodeInstr" style="display:none"> Enter your postal code. </p>
+                        
                
                <!-- control buttons for the form -->
                 <div id = formBtns>
                     <br> <br> 
-                    <input type="submit" Value="Click to submit" id = "submit" formaction="/bouncer.php">
+                    <input type="submit" Value="Click to submit" id = "submitBtn" formaction="/bouncer.php">
                     <input type="reset" Value="reset form" id = "resetForm">
                 </div>
 

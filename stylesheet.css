@@ -26,7 +26,9 @@ body {
 }
 
 #footer{
-    position: absolute;
+    position: static;
+    margin-top: auto;
+    margin-bottom: 0px;
     left:30px;
     right: auto;
 }
@@ -111,24 +113,24 @@ textarea{
 #credentials{
     float: left;
     position: relative;
-    margin-left: 200px;
+    margin-left: 5%;
     margin-right: auto;
     border: 1px solid red;
-    padding: 10px;
+    padding: 5px;
 }
 
 #addressDetails{
     float:right;
     position:relative;
     margin-left: auto;
-    margin-right: 200px;
+    margin-right: 5%;
     border: 1px solid red;
-    padding 10px;
+    padding 1px;
 }
 
 #formBtns{
     position:relative;
-    margin: 200px
+    margin: 15%;
 
 }
 
@@ -138,9 +140,29 @@ textarea{
 
 
 label{
-    margin: 5px;
+    margin-top: 30px;
 }
 
 .labelColor{
-    background-color: lightblue
+    background-color: lightblue;
+}
+
+.instructionRight{
+    visibility: hidden;
+    float: right;
+    position: relative;
+    margin: 1px; 
+    font-size: 10px; 
+    background-color: lightblue;
+}
+
+
+/* instructions shown to the right of the field and are stacked on top of each other (assignment 7) */
+.instructionLeft{
+    visibility: hidden;
+    float: right;
+    position: relative;
+    margin: 1px;
+    font-size: 10px; 
+    background-color: lightblue;
 }
