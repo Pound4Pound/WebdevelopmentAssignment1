@@ -1,4 +1,4 @@
-Github README.md provides documentation identifying the author, date, course module and “Final Assignment”
+Github README.md provides documentation identifying the author, date, course module and ï¿½Final Assignmentï¿½
 
 
 Author: 		Colin Lee-Chee
